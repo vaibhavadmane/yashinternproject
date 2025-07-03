@@ -2,20 +2,530 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sample Project</title>
-   <!-- <link rel="stylesheet" href="style/index.css" /> -->
-  <link rel="stylesheet" href="style/navbarstyle.css" />
-  <!-- <link rel="stylesheet" href="style/vision.css" />  -->
+  <style>
+    /* === Global & Navbar === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    .main {
+      background: url('./mobilenavbg.jpg') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      position: relative;
+    }
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .hamburger {
+      font-size: 2rem;
+      cursor: pointer;
+      display: none;
+    }
+    .mobile-nav {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 10px 0;
+      position: absolute;
+      width: 100%;
+      top: 60px;
+    }
+    .mobile-nav.show {
+      display: block;
+    }
+    .mobile-nav ul, .desktop-nav ul {
+      list-style: none;
+      text-align: center;
+    }
+    .mobile-nav li, .desktop-nav li {
+      padding: 10px 0;
+      cursor: pointer;
+    }
+    .desktop-nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      align-items: center;
+    }
+    .desktop-nav ul {
+      display: flex;
+      gap: 20px;
+    }
+    .textnav {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .textnav2 {
+      text-align: center;
+      margin: 20px 10%;
+      font-size: 1rem;
+    }
+    .btnnav {
+      text-align: center;
+      margin: 30px auto;
+      width: fit-content;
+      padding: 10px 20px;
+      background-color: white;
+      color: black;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* === Second Page === */
+    .secondpage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      background-color: #f7f7f7;
+    }
+    .btn1 {
+      border-radius: 30px;
+      padding: 10px 25px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    .heading2 {
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+    .heading22 {
+      font-size: 1.1rem;
+      color: #555;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    /* === Brands Section === */
+    .brand-section {
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+    .brand-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .brand-item {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    .brand-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* === Philosophy Section === */
+    .philosophy {
+      background-color: #1e1e1e;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .philosophy h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .philosophy p {
+      font-size: 1rem;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-header, .mobile-nav {
+        display: none;
+      }
+    }
+
+ .vision-section {
+      position: relative;
+      background-color: #f4edfd;
+      padding: 5rem 1.5rem;
+      overflow: hidden;
+      background-image: url('./gun.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 470px;
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .vision-section {
+        padding: 5rem;
+      }
+    }
+
+    .vision-label {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #3f2d87;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 1rem;
+      border-top-left-radius: 0.375rem;
+      border-top-right-radius: 0.375rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 2147483647;
+    }
+
+    .vision-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (min-width: 1024px) {
+      .vision-container {
+        flex-direction: row;
+      }
+    }
+
+    .vision-image {
+      max-width: 20rem;
+      width: 100%;
+    }
+
+    .vision-content {
+      text-align: center;
+      max-width: 42rem;
+      width: 100%;
+    }
+
+    .vision-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: #1f2937;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .vision-title {
+        white-space: normal;
+        font-size: 1.5rem;
+      }
+    }
+
+    .vision-text {
+      color: #4b5563;
+      margin-bottom: 0.75rem;
+      font-weight: bold;
+    }
+
+    .vision-button {
+      background-color: #f97316;
+      color: black;
+      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .vision-button:hover {
+      background-color: #ea580c;
+    }
+
+    /* Footer Section */
+    .footer {
+      background-color: #1A0B2E;
+      color: white;
+      padding: 2.5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      background-image: url('./img5.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 200px;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .footer {
+        padding: 2.5rem 5rem;
+      }
+    }
+
+    .footer-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/pattern.png');
+      opacity: 0.2;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    .footer-logo-circle {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+      border-radius: 9999px;
+      background-color: #f97316;
+    }
+
+    .footer-nav {
+      background-color: #3b2c5a;
+      border-radius: 0.375rem;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #f3f4f6;
+      margin-right: -40rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-nav a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #fb923c;
+    }
+
+    .footer-copy {
+      font-size: 0.875rem;
+      color: #d1d5db;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+
+    .footer-terms {
+      font-size: 0.875rem;
+      color: #d1d5db;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 3rem;
+      font-weight: bold;
+    }
+
+    .footer-terms a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footer-terms a:hover {
+      text-decoration: underline;
+    }
+
+
+
+  </style>
 </head>
 <body>
-  <div id="app"></div>
 
-  <script src="components/navbar.js" defer></script>
-  <!-- <script src="components/secondpage.js" defer></script>
-  <script src="components/philosophy.js" defer></script>
-  <script src="components/vision.js" defer></script>
-  <script src="components/footer.js" defer></script> -->
-  <script src="main.js" defer></script>
+  <div class="main">
+    <header class="mobile-header">
+      <div class="logo">
+        <div class="logo-dot"></div>
+        <span>Sample Project</span>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileMenu">
+      <ul>
+        <li class="active">Home</li>
+        <li>About</li>
+        <li>Our Brands</li>
+        <li>What We Do</li>
+        <li>Team</li>
+        <li>Careers</li>
+      </ul>
+    </nav>
+
+    <nav class="desktop-nav">
+      <div class="logo">
+        <div class="logo-dot"></div>
+        <span>Sample Project</span>
+      </div>
+      <ul>
+        <li class="active">Home</li>
+        <li>About</li>
+        <li>Our Brands</li>
+        <li>What We Do</li>
+        <li>Team</li>
+        <li>Careers</li>
+      </ul>
+    </nav>
+
+    <div class="textnav">Where Vision Becomes Venture</div>
+    <div class="textnav2">
+      Sample World builds and nurtures independent brands that do more than compete — they connect,
+      inspire, and redefine the emotional and cultural fabric of everyday life.
+    </div>
+    <div class="btnnav">Discover Our Vision</div>
+  </div>
+
+  <div class="secondpage">
+    <button class="btn1">ABOUT US</button>
+    <h2 class="heading2">We Grow Passion Into Purpose</h2>
+    <p class="heading22">
+      Sample Ventures is a house of brands built for the long term. We create industry-defining brands
+      through purpose-driven innovation, cultural understanding, and a long-term approach to growth.
+    </p>
+  </div>
+
+  <div class="brand-section">
+    <div class="brand-grid">
+      <div class="brand-item">
+        <img src="./img1.jpg" alt="Brand 1">
+        <h3>Sample Brand</h3>
+        <p>Our flagship brand committed to modern well-being.</p>
+      </div>
+      <div class="brand-item">
+        <img src="./img2.jpg" alt="Brand 2">
+        <h3>Another Brand</h3>
+        <p>Delivering innovation and inspiration in every product.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="philosophy">
+    <h2>Our Philosophy</h2>
+    <p>
+      Our mission is to build purpose-driven brands that emotionally connect with people and
+      redefine their everyday lives. With a commitment to quality, authenticity, and long-term value,
+      Sample Ventures aims to leave a lasting positive impact on the world.
+    </p>
+  </div>
+
+
+
+ <!-- Vision Section -->
+  <section class="vision-section">
+    <div class="vision-label">The Vision</div>
+    <div class="vision-container">
+      <div class="vision-image"></div>
+      <div class="vision-content">
+        <h2 class="vision-title">Our Vision Is Not to Own the Future. It’s to Inspire It</h2>
+        <p class="vision-text">Only deep belief in ideas that matter and experiences that move people.</p>
+        <p class="vision-text">In a world driven by urgency, we build with intention</p>
+        <button class="vision-button">Learn More About Us</button>
+      </div>
+      <div class="vision-image"></div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-bg"></div>
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo">
+          <div class="footer-logo-circle"></div>
+          <span>Sample Project</span>
+        </div>
+        <p class="footer-copy">© 2025 Sample Project. All rights reserved</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Our Brands</a>
+        <a href="#">What We Do</a>
+        <a href="#">Team</a>
+        <a href="#">Careers</a>
+      </div>
+
+      <div class="footer-terms">
+        <a href="#">Term of Use</a>
+        <span>|</span>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("mobileMenu");
+      nav.classList.toggle("show");
+    }
+  </script>
+
 </body>
 </html>
