@@ -32,6 +32,36 @@
             margin: 0 auto 2.5rem;
           }
 
+.brand-container {
+  position: relative;
+  text-align: center; /* optional: centers the h2 below */
+  margin-bottom: 2rem;
+}
+
+.brandtag {
+  position: absolute;
+  margin-top: -6rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(63, 63, 134);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 1rem;
+  border-radius: 0.375rem 0.375rem 0 0;
+  z-index: 1;
+}
+
+/* On tablet & mobile: center the tag in one line above h2 */
+@media (max-width: 1023px) {
+  .brandtag {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+  
           @media (min-width: 640px) {
             .brands-grid {
               grid-template-columns: repeat(2, 1fr);
