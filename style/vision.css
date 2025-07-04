@@ -1,39 +1,95 @@
-@media (max-width: 768px) {
-  .hello {
-    height: auto; /* allow content to define height */
-    max-height: 17rem;
-    background-size: cover;
-    background-position: top;
-    padding-bottom: 2rem;
+@media (min-width: 992px){
+  .man{
+    display: none;
   }
-    .vision-title {
-    font-size: 1rem;
-    line-height: 1;
-    white-space: normal;
+  .mountain{
+    display: none;
   }
-
-  .vision-text {
-    font-size: 0.80rem;
-    font-weight: 500;
-    padding: 0 1rem;
+  .hello{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-image: url(../assets/visionimg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 518px;
   }
-
-  .vision-button {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.95rem;
+  .textvision{
+    margin-top: 2rem;
+     background-image: url(../assets/visiontext.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 757px;
+  height: 207px;
   }
-
-  .vision-content {
-    padding: 0 1rem;
-  }
-
 }
-@media (max-width: 412px) {
-  .hello {
-    height: auto; /* allow content to define height */
-    max-height: 10rem;
-    background-size: cover;
-    background-position: top;
-    padding-bottom: 2rem;
+@media (min-width: 412px) and (max-width: 992px){
+  .hello{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: 617px;
+    width: 100%;
+    background-image: url(../assets/visionmid.png);
+    background-repeat: no-repeat;
+     background-size: cover;
+
   }
+  .man{
+    height: 466px;
+    width: 287px;
+     background-image: url(../assets/image.png);
+     background-repeat: no-repeat;
+     background-size: cover;
+  }
+  .mountain{
+    height: 361px;
+    width: 271px;
+     background-image: url(../assets/visionmidmot.png);
+     background-repeat: no-repeat;
+     background-size: cover;
+  }
+ .text1{
+  /* Our Vision Is Not to Own the Future. It’s to Inspire It */
+
+position: absolute;
+width: 642px;
+height: 54px;
+left: calc(50% - 642px/2 - 2px);
+top: 3222px;
+
+font-family: 'Afacad';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 168.52%;
+/* identical to box height, or 54px */
+text-align: center;
+
+color: #000000;
+
+
+ }
+ .text2{
+  /* Only deep belief in ideas that matter and experiences that move people.  In a world driven by urgency, we build with intention */
+
+position: absolute;
+width: 757px;
+height: 60px;
+left: calc(50% - 757px/2 + 0.5px);
+top: 3315px;
+
+font-family: 'Afacad';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 168.52%;
+/* or 30px */
+text-align: center;
+
+color: #000000;
+
+
+ }
 }
