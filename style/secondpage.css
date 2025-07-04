@@ -1,18 +1,19 @@
- #philosophy-section {
+  #philosophy-section {
                display: flex;
                flex-direction: column;
                align-items: center;
                justify-content: center;
-               padding: 4rem 1.5rem;
+               padding:4rem 0 ;
                gap: 2.5rem;
                background-color: white;
              }
    
-             @media (min-width: 1024px) {
+             @media (min-width: 992px) {
                #philosophy-section {
                  flex-direction: row;
                  justify-content: space-evenly;
                }
+              
              }
    
              .illustration-container {
@@ -28,7 +29,7 @@
              }
    
              .content-wrapper {
-               max-width: 50rem;
+               
                width: 100%;
                padding: 0 1rem;
              }
@@ -74,6 +75,45 @@
                .title {
                  font-size: 2rem;
                }
+             }
+   
+             .highlight {
+               color: #f97316;
+               font-weight: 700;
+             }
+   
+             .paragraph {
+               color: #1f2937;
+               margin-bottom: 1rem;
+               line-height: 1.75;
+               font-size: 1rem;
+               font-weight: 500;
+             } 
+
+           @media (min-width:320px) and (max-width:992px) {
+            .uptag{
+              width: 100%;
+              display: flex;
+              justify-content: center;
+            }
+             .tag{
+              position: relative;
+              top:-50px;
+            }
+           }
+            @media (min-width:320px) and (max-width:768px) {
+              .tag{
+              position: relative;
+              top:-35px;
+            }
+            }
+
+            
+             @media (min-width: 768px) {
+                .title {
+    font-size: 2rem;
+    white-space: nowrap;
+  }
              }
    
              .highlight {
