@@ -19,7 +19,11 @@
              .illustration-container {
                max-width: 28rem;
                width: 100%;
-               padding: 0 1rem;
+               /* padding: 0 1rem; */
+             }
+             @media (min-width: 992px){
+              .illustration-container {
+                padding: 0 1rem;}
              }
    
              .illustration-container img {
@@ -31,7 +35,7 @@
              .content-wrapper {
                
                width: 100%;
-               padding: 0 1rem;
+               /* padding: 0 1rem; */
              }
    
              .content-box {
