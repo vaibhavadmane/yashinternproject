@@ -132,3 +132,9 @@
                font-size: 1rem;
                font-weight: 500;
              }
+             @media (min-width:992px) {
+              .tag{
+                position: relative;
+                top: -57px;
+              }
+             }

@@ -9,6 +9,7 @@
                gap: 2.5rem;
                background-color: white;
              }
+
    
              @media (min-width: 992px) {
                #philosophy {
@@ -107,7 +108,7 @@
             @media (min-width:320px) and (max-width:768px) {
               .the{
               position: relative;
-              top:23px;
+              top: -30px;
             }
             }
 
@@ -131,3 +132,36 @@
                font-size: 1rem;
                font-weight: 500;
              }
+               @media (min-width:992px) {
+              .the{
+                position: relative;
+                top: -43px;
+                left: -200px;
+              }
+             }
+                @media (min-width: 768px) and (max-width:992px){
+                  .the{
+                    top:-30px;
+                  }
+                }
+                @media (min-width: 1115px) and (max-width:1440px) {
+                  .the{
+                position: relative;
+              
+                left: -300px;
+              }
+                }
+                 @media (min-width: 1115px) and (max-width:1270px) {
+                  .the{
+                position: relative;
+              
+                left: -250px;
+              }
+                }
+                   @media (min-width: 1115px) and (max-width:1150px) {
+                  .the{
+                position: relative;
+              
+                left: -200px;
+              }
+                }
