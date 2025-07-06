@@ -1,4 +1,23 @@
+.visiontag{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.under{
+  font-size: large;
+  color: white;
+   background-color: #593290;
+              padding: 0.3rem 1rem;
+              opacity: 0.8;
+              border-radius: 8px;
+}
+
 @media (min-width: 992px){
+  .visiontag{
+    position: relative;
+    top:15px;
+  }
   .man{
     display: none;
   }
@@ -34,6 +53,10 @@
   
 }
 @media (min-width: 320px) and (max-width: 992px){
+    .visiontag{
+    position: relative;
+    top:-10px;
+  }
   .hello{
  
     display: flex;

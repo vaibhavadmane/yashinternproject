@@ -130,3 +130,9 @@ footer.footer {
    width: 85%;
   }
 }
+@media (max-width:620px) {
+ .lele{
+  flex-direction: column-reverse;
+  height: 103px;
+ }
+}

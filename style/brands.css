@@ -4,8 +4,10 @@
             padding: 4rem 1rem;
             text-align: center;
           }
+        
           .brtag{
               background-color: #593290;
+              color: white;
               padding: 0.5rem 1.2rem;
               opacity: 0.8;
               border-radius: 8px;
@@ -81,11 +83,13 @@
           }
 
           .brand-card {
+            
             border-radius: 0.75rem;
             border: 1px solid #d8b4fe; /* purple-200 */
             overflow: hidden;
             background-color: white;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            
           }
 
           .brand-card.blue-border {
@@ -125,9 +129,9 @@
 
           .cta-button {
             background-color: #f97316; /* orange-500 */
-            color: white;
+            color: black;
             font-weight: 600;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 7.5rem;
             border-radius: 9999px;
             font-size: 1.125rem;
             cursor: pointer;
