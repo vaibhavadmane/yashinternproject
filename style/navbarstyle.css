@@ -381,7 +381,12 @@ flex-direction: column;
     margin-top: 63px;
   }
 }
-
+@media(max-width:4200px){
+  .textn{
+    margin-top: 63px;
+  }
+  
+}
 
 @media (max-width:1127px) and (min-width:992px)  {
 .main{

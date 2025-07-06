@@ -119,11 +119,13 @@ align-items: center;
   background-color: #f97316;
   padding: 0.6rem 2.1rem;
   margin-top: 30px;
+  font-weight: 700;
   
 }
 .first{
   font-size: 32px;
   font-weight: 600;
+  margin-bottom: 8px;
 }
  
 }
